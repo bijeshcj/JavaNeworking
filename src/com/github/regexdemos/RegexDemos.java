@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 public class RegexDemos {
     private RegexDemos(){
         String x =  "{\"time\" : \"2012-09-24T03:08:50\", \"message\" : \"Call() started\"}";
-        String pat = "\\{(.*?)\\}";
+        String pat = "\\{((.*?)\\}";
 //        getNumberOfBracesFromGivenString(getString(),"\\{(.*?)\\}");
         getNumberOfBracesFromGivenString(getString(),pat);
 //        scanNewLine();
@@ -28,7 +28,9 @@ public class RegexDemos {
         Pattern pat = Pattern.compile("\\n");
         Matcher mat = pat.matcher(s);
         int count =0;
+        System.out.println("before scan");
         while(mat.find()){
+            System.out.println(mat.group(0));
             count++;
         }
         System.out.println("Number of lines are "+count);
