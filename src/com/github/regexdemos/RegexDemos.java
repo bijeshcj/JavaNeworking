@@ -15,7 +15,7 @@ public class RegexDemos {
         String x =  "{\"time\" : \"2012-09-24T03:08:50\", \"message\" : \"Call() started\"}";
         String pat = "\\{((.*?)\\}";
 //        getNumberOfBracesFromGivenString(getString(),"\\{(.*?)\\}");
-        getNumberOfBracesFromGivenString(getString(),pat);
+        getNumberOfBracesFromGivenString(getString(),"\\{");
 //        scanNewLine();
     }
     private String getString(){
@@ -40,9 +40,10 @@ public class RegexDemos {
         Pattern pat = Pattern.compile(pattern);
         Matcher mat = pat.matcher(s);
         int count = 0;
+        System.out.println("*****************************");
         while(mat.find()){
              count++;
-            System.out.println(mat.group(1));
+            System.out.println(mat.group());
         }
         System.out.println("number of brackets in the given string are " + count);
     }
