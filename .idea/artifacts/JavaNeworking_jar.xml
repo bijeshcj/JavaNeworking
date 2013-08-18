@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="JavaNeworking:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/JavaNeworking_jar</output-path>
+    <root id="archive" name="JavaNeworking.jar">
+      <element id="module-output" name="JavaNeworking" />
+    </root>
+  </artifact>
+</component>

@@ -25,7 +25,7 @@ public class Demo2D extends JFrame {
                 JFrame frame = new Demo2D();
                 frame.setLocationRelativeTo(null);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.setSize(new Dimension(600,500));
+                frame.setSize(new Dimension(800,500));
                 frame.setVisible(true);
             }
         });
@@ -39,10 +39,14 @@ public class Demo2D extends JFrame {
         public void paintComponent(Graphics g){
             Graphics2D g2 = (Graphics2D)g;
 
-            Shape ellipse = new Ellipse2D.Double(150,100,500,200);
+            Shape ellipse = new Ellipse2D.Double(150,50,200,200);
             GradientPaint paint = new GradientPaint(100,100,Color.WHITE,400,400,Color.GRAY);
-//            g2.setPaint(paint);
+            g2.setPaint(paint);
             g2.fill(ellipse);
+
+            AlphaComposite ac = AlphaComposite.getInstance(AlphaComposite.SRC_OVER,0.4f);
+            g2.setComposite(ac);
+            g2.setColor(Color.blue);
 
         }
     }
