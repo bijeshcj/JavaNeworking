@@ -1,6 +1,15 @@
 <?xml version="1.0"?>
-<project name="JavaNetworking" basedir="." default="build-dtd">
-    <echo level="info"> baseDir $project.basedir </echo>
+<project name="JavaNetworking" basedir="." >             <!-- default="build-dtd" -->
+   <!-- <echo level="info"> baseDir ${basedir} </echo>   -->
+
+    <target name="properties.built-in">
+           <echo level="info" message="The base directory is ${basedir}"/>
+           <echo level="info" message="This file :${ant.file}" />
+           <echo message="Ant version ${ant.version}" />
+           <echo message="project name: ${ant.project.name}" />
+           <echo message="Java version ${ant.java.version}" />
+    </target>
+
     <target name="build-dtd">
         <echo>Inside the build-dtd</echo>
          <antstructure output="./project.dtd" />
