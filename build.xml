@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<project name="JavaNetworking" basedir="." default="build-dtd">
+    <echo level="info"> baseDir $project.basedir </echo>
+    <target name="build-dtd">
+        <echo>Inside the build-dtd</echo>
+         <antstructure output="./project.dtd" />
+    </target>
+</project>
