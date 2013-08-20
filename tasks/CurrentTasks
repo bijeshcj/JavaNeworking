@@ -13,3 +13,11 @@ BM-ANTTASKS
            else if uses import android.R leave that file.
 * create an ant target which executes this jar -- not done
 * put this as depends before the task which compiles the project -- not done
+
+
+****************************************************************************************************************************************8
+
+encryprt mac address SRX-2
+
+in class AutomationDemos method encryptMacAddress
+

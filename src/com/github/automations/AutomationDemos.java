@@ -13,11 +13,20 @@ import java.io.PrintWriter;
 public class AutomationDemos {
     private AutomationDemos(){
 //        openCommandPrompt();
-        openCommandWithScript();
+//        openCommandWithScript();
+          encryptMacAddress();
     }
 
     public static void main(String... str){
         new AutomationDemos();
+    }
+    private void encryptMacAddress(){
+        String macAddess = "BC:34";
+        char[] chars = macAddess.toCharArray();
+        for(char c: chars)
+            System.out.println(c);
+
+        System.out.println((char)80);
     }
     private void openCommandPrompt(){
         try{
