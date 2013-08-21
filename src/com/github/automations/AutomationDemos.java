@@ -14,19 +14,168 @@ public class AutomationDemos {
     private AutomationDemos(){
 //        openCommandPrompt();
 //        openCommandWithScript();
-          encryptMacAddress();
+          encryptMacAddress("BC:FA");        //6667585152
+        print127();
     }
 
     public static void main(String... str){
         new AutomationDemos();
     }
-    private void encryptMacAddress(){
-        String macAddess = "BC:34";
-        char[] chars = macAddess.toCharArray();
-        for(char c: chars)
-            System.out.println(c);
+    private String encryptMacAddress(String macAddress){
 
-        System.out.println((char)80);
+        StringBuilder sb = new StringBuilder();
+        char[] chars = macAddress.toCharArray();
+        for(int i=0;i<chars.length;i++){
+
+          sb.append(getEncryptedString(chars[i]));
+        }
+        System.out.println("encrypted string: "+sb.toString());
+        System.out.println("decrypted string: "+deCryptMacAddress(sb.toString()));
+        return sb.toString();
+    }
+    private String getInt(char c){
+        if(c == ':'){
+            return ""+(((int)c)+23);
+        }
+        return ""+(((int)c)+30);
+    }
+    private String getEncryptedString(char i){
+        String retVal = "";
+
+        switch (i){
+            case 'A':
+                retVal = ""+(char)161;
+                break;
+            case 'B':
+                retVal = ""+(char)182;
+                break;
+            case 'C':
+                retVal = ""+(char)177;
+
+                break;
+            case 'D':
+                retVal = getInt(i);
+
+                break;
+            case 'E':
+                retVal = getInt(i);
+
+                break;
+            case 'F':
+                retVal = ""+(char)191;
+
+                break;
+            case 'G':
+                retVal = getInt(i);
+
+                break;
+            case 'H':
+                retVal = getInt(i);
+
+                break;
+            case 'I':
+                retVal = getInt(i);
+
+                break;
+            case 'J':
+                retVal = getInt(i);
+
+                break;
+            case 'K':
+                retVal = getInt(i);
+
+                break;
+            case 'L':
+                retVal = getInt(i);
+
+                break;
+            case 'M':
+                retVal = getInt(i);
+
+                break;
+            case 'N':
+                retVal = getInt(i);
+
+                break;
+            case 'O':
+                retVal = getInt(i);
+
+                break;
+            case 'P':
+
+                break;
+            case 'Q':
+
+                break;
+
+            case 'R':
+
+                break;
+            case 'S':
+
+                break;
+            case 'T':
+
+                break;
+            case 'U':
+
+                break;
+            case 'V':
+
+                break;
+            case 'W':
+
+                break;
+            case 'X':
+
+                break;
+            case 'Y':
+
+                break;
+            case 'Z':
+
+                break;
+            case ':':
+                retVal = ""+(char)187;
+                break;
+
+            default:
+                System.out.println("default");
+        }
+
+
+        return retVal;
+    }
+    private String deCryptMacAddress(String macAddress){
+//        BC:FA
+        StringBuilder retVal = new StringBuilder();
+        char[] chars = macAddress.toCharArray();
+        for(int i=0;i<chars.length;i++){
+        switch(chars[i]){
+            case '¡':
+            retVal.append('A');
+                break;
+            case '¶':
+                retVal.append('B');
+                break;
+            case '±':
+                retVal.append('C');
+                break;
+            case '¿':
+                retVal.append('F');
+                break;
+            default:
+                retVal.append(':');
+
+        }
+        }
+        return retVal.toString();
+    }
+
+    private void print127(){
+        for(int i=0;i<255;i++){
+            System.out.println(i+": "+(char)i);
+        }
     }
     private void openCommandPrompt(){
         try{
