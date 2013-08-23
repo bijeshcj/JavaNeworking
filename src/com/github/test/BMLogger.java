@@ -9,7 +9,7 @@ package com.github.test;
  */
 public class BMLogger{
 
-    private static final boolean FLAG = true;
+    private static final boolean FLAG = false;
 
     protected static void print(Severe sev,String message){
             switch (sev){

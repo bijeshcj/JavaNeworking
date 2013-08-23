@@ -26,6 +26,8 @@ BM-ANTTASKS   -- in progress
 
 
 * rename the folder name as well (packagename) -- in progress
+    method name:
+       1) check related to BM (rename the package name)
 
 * create an ant target which executes this jar -- not done
 
@@ -42,7 +44,10 @@ Related to BM  -- coded in class com.github.test.RelatedToBM
       2) save the changes in the same file -- done
            -- coded in method renamePackage
 
-
+* rename the package folder name -- in progress
+       method name: renamePackgeFolder
+      1) from the root path of the project scan inside the src folder -- in progress
+      2) rename the folder name which has bharathmatrimony to bharathmatrimony_<language> -- not done
 
 
 *****************************************************************************************************************************************
