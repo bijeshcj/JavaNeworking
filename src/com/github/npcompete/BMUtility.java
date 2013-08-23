@@ -9,8 +9,12 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.*;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.io.IOException;
+import java.io.StringWriter;
 
 /**
  * Created with IntelliJ IDEA.
@@ -35,6 +39,28 @@ public class BMUtility extends BMLogger{
             e.printStackTrace();
         }
         return doc;
+    }
+
+    protected static void saveDocument(Document doc,File manifestFile){
+        try{
+        Transformer transformer = TransformerFactory.newInstance().newTransformer();
+        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+        StreamResult result = new StreamResult(new StringWriter());
+        DOMSource source = new DOMSource(doc);
+        transformer.transform(source, result);
+
+        String xmlOutput = result.getWriter().toString();
+
+
+        StreamResult resultToFile = new StreamResult(manifestFile);
+        DOMSource sourceFile = new DOMSource(doc);
+        transformer.transform(sourceFile, resultToFile);
+        }catch(TransformerConfigurationException e){
+            e.printStackTrace();
+        }catch(TransformerException e){
+            e.printStackTrace();
+        }
     }
 
     protected static String getAttributeValue(Document doc,String element,String attribute){
