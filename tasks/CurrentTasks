@@ -1,17 +1,29 @@
 BM-ANTTASKS   -- in progress
 
-* create a method stub scanForManifest() to find the manifest file  -- done
+* create a method stub getManifestPath() to find the manifest file  -- done
+
 * send an argument to ANT script which will build for that particular language which should also be the argument for bm jar-- not done
-* in the manifest if no args or if global then don't do any thing -- not done
-* if any argument like tamil or malayalam or hindi -- in progress
+
+* in the manifest if no args or if global then don't automate just build the apk -- not done
+
+* Construct AndroidProject -- done
      -- in manifest find the package attribute from the project element and then take the string and append the argument language
-         ** get the method from the artisan installer which scans and find the package name -- not done
+         ** get the method from the artisan installer which scans and find the current package name -- done
          ** create AndroidProject model which will have all the info about the AndroidProject -- done
-     -- scan the src folder and scan all the java file using the same logic of artisan to find the onPause, onresume and oDestroy methods
+
+         ** construct the AndroidProject -- done
+
+* rename the package name in the manifest file -- in progress
+
+* scan the src folder and scan all the java file using the same logic of artisan to find the onPause, onresume and oDestroy methods
      -- create a regex to find the string import previous package name.R
           --- if exists then change to current package name .R
            else if uses import android.R leave that file.
+
+* rename the folder name as well (packagename) -- not done
+
 * create an ant target which executes this jar -- not done
+
 * put this as depends before the task which compiles the project -- not done
 
 
