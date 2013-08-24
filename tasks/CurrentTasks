@@ -14,20 +14,23 @@ BM-ANTTASKS   -- in progress
 
          ** construct the AndroidProject -- done
 
-* rename the package name in the manifest file -- in progress
+* rename the package name in the manifest file -- done
          1) create a saveDocument method in BMUtility class -- done
-         2) rename the package name in the manifest -- in progress
+         2) rename the package name in the manifest -- done
 
-* scan the src folder and scan all the java file using the same logic of artisan to find the onPause, onresume and oDestroy methods   -- in progress
-     -- create a regex to find the string import previous package name.R  -- not done
-          --- if exists then change to current package name .R   -- done
-          *** check related to BM  (modify a java source file)
-           else if uses import android.R leave that file.
+* in the java src and res folder  change the package name used  -- done
+          1) check related to BM  (modify a java source file) -- done
+          2) use the renamePackage method and iterate inside the src and res folder and replace the string for all the files -- in progress
+                  Note: code in TestBM class method name : parseSourceAndResources
+                  1) loop inside the folder src -- in progress
+                  2) change call the method renamePackage by sending the file -- in progress
+                  3) loop inside the folder res and repeat step 2 -- not done
 
 
-* rename the folder name as well (packagename) -- in progress
+
+**** rename the folder name as well (packagename) -- in progress
     method name:
-       1) check related to BM (rename the package name)
+       1) check related to BM (rename the package folder name)
 
 * get the root path from the user as of now -- not done
         1) get the project home path from ant build property and use this method getManifestFile()

@@ -28,7 +28,7 @@ public class BharathMatrimonyAntTask {
 
           String fileSeparator =  fileSeparator();
           File manifestFile = getManifestFile(projectPath,fileSeparator);
-          project = constructAndroidProject(manifestFile,currentPackage,intentPackage,systemOS(),fileSeparator);
+          project = constructBMProject(manifestFile, currentPackage, intentPackage, systemOS(), fileSeparator);
 
           renamePackageNameInManifest(project,intentPackage);
 
@@ -38,6 +38,29 @@ public class BharathMatrimonyAntTask {
 
     private void renamePackageNameInManifest(BMProject project,String intentPackage){
           BMUtility.setAttributeValue(project.getManifestFile(),"manifest","package",intentPackage);
+    }
+
+
+    private void parseSourceAndResources(BMProject project){
+        parsingSource(project);
+        parsingResource(project);
+    }
+    private void parsingSource(BMProject project){
+        traverse(new File(project.getRootPath()+project.getFileSeparator()+"src"),".java",project.getCurrentPackageName(),project.getIntentedPackageName());
+    }
+    private void parsingResource(BMProject project){
+        traverse(new File(project.getRootPath()+project.getFileSeparator()+"res"),".xml",project.getCurrentPackageName(),project.getIntentedPackageName());
+    }
+
+    private void traverse(File f,String fileType,String currentName,String intentName){
+        File[] files = f.listFiles();
+        for(File file:files){
+            if(file.isDirectory()){
+                traverse(file,fileType,currentName,intentName);
+            }else if(file.getName().endsWith(fileType)){
+                BMUtility.renamePackage(file,currentName,intentName);
+            }
+        }
     }
 
     private String systemOS(){
@@ -62,11 +85,11 @@ public class BharathMatrimonyAntTask {
     /**
      * This method will construct the project model which contains all the needed information about the project
      */
-    private BMProject constructAndroidProject(File manifestFile,String currentPackage,String intentPackage,String os,String fileSeparator){
+    private BMProject constructBMProject(File manifestFile, String currentPackage, String intentPackage, String os, String fileSeparator){
 
            String currentPackageInManifest = getCurrentPackagename(manifestFile);
-           if(currentPackage.equals(currentPackageInManifest)){
-              print(Severe.HIGH,"The pacakage name in the manifest is same as argument so automation will exit ");
+           if(intentPackage.equals(currentPackageInManifest)){
+              print(Severe.HIGH, "The pacakage name in the manifest is same as argument so automation will exit ");
               System.exit(0);
            }
            return new BMProject(manifestFile,currentPackage,intentPackage,os,fileSeparator);

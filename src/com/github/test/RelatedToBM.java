@@ -15,10 +15,11 @@ import java.io.IOException;
 public class RelatedToBM extends BMLogger{
 
     public RelatedToBM(){
-        File file = new File("/home/npcompete/workspace/TestAntOne/src/com/example/testantone/MainActivity.java");
+//        File file = new File("/home/npcompete/workspace/TestAntOne/src/com/example/testantone/MainActivity.java");
 //        renamePackage(file, "com.bharathmatrimony", "com.bharathmatrimony_tamil");
-        File homeFile = new File("C:\\Bijesh\\Work\\NPCompete\\BharathMatrimony\\TestBMAutomation\\bm_all_langs");
-        renamePackageFolder(homeFile);
+        File homeFile = new File("/home/npcompete/TempBiju/TestBMAutomation/bm_all_langs/src/com/bharatmatrimony/chat/ChatDB.java");
+        renamePackage(homeFile,"com.bharatmatrimony","com.bharatmatrimony_tamil");
+//          replaceString("import com.bharatmatrimony.AppState;",);
     }
 
 

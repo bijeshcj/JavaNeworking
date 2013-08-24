@@ -51,8 +51,12 @@ public class BMProject{
         this.rootPath = rootPath;
     }
 
+    public void setIntentedPackageName(String packagename){
+        this.intentedPackageName = packagename;
+    }
+
     public String getIntentedPackageName(){
-        return currentPackageName+"_"+languageToBuild;
+        return this.intentedPackageName;
     }
 
     public String getCurrentPackageName() {
@@ -74,9 +78,9 @@ public class BMProject{
 
 
 
-    public BMProject(File manifestFile,String currentpackageName,String languageToBuild,String os,String fileSeparator){
+    public BMProject(File manifestFile,String currentpackageName,String intentPackage,String os,String fileSeparator){
         this.currentPackageName = currentpackageName;
-        this.languageToBuild = languageToBuild;
+        this.intentedPackageName = intentPackage;
         this.OS = os;
         this.fileSeparator = fileSeparator;
         this.manifestFile = manifestFile;

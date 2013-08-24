@@ -1,5 +1,6 @@
 package com.github.npcompete;
 
+import org.apache.commons.io.FileUtils;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
@@ -21,6 +22,28 @@ import java.io.StringWriter;
  * To change this template use File | Settings | File Templates.
  */
 public class BMUtility extends BMLogger{
+
+    protected static void renamePackage(File file, String currentPackage, String intentPackage){
+        try{
+            String src = FileUtils.readFileToString(file);
+            if(file.getName().equals("ChatDB.java")){
+                print(Severe.HIGH,"currentPackage: "+currentPackage+" intentPackage: "+intentPackage);
+                print(Severe.HIGH,"*********************** original src *****************");
+                print(Severe.HIGH,src);
+            }
+            src = src.replaceAll(currentPackage,intentPackage);
+
+            if(file.getName().equals("ChatDB.java")){
+                print(Severe.HIGH,"*********************** parsed src *****************");
+                print(Severe.HIGH,src);
+            }
+
+            FileUtils.write(file,src);
+
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+    }
 
 
 
