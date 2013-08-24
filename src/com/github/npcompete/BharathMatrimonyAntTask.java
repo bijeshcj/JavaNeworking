@@ -28,13 +28,28 @@ public class BharathMatrimonyAntTask {
 
           String fileSeparator =  fileSeparator();
           File manifestFile = getManifestFile(projectPath,fileSeparator);
-          project = constructBMProject(manifestFile, currentPackage, intentPackage, systemOS(), fileSeparator);
+          project = constructBMProject(projectPath,manifestFile, currentPackage, intentPackage, systemOS(), fileSeparator);
 
           renamePackageNameInManifest(project,intentPackage);
+          parseSourceAndResources(project);
+          renameFolder(project);
 
-
-
+          print(Severe.HIGH,"BM Automation completed successfully!!!!");
     }
+
+    private void renameFolder(BMProject project){
+         File currentpackageFolder = new File(project.getRootPath()+project.getFileSeparator()+"src"+project.getFileSeparator()+"com"+project.getFileSeparator()+getPackageName(project.getCurrentPackageName()));
+         File intentpackageFolder = new File(project.getRootPath()+project.getFileSeparator()+"src"+project.getFileSeparator()+"com"+project.getFileSeparator()+getPackageName(project.getIntentedPackageName()));
+         currentpackageFolder.renameTo(intentpackageFolder);
+    }
+
+    private String getPackageName(String pack){
+        String retVal = "";
+        String[] vals = pack.split("\\.");
+        retVal = vals[vals.length-1];
+        return retVal;
+    }
+
 
     private void renamePackageNameInManifest(BMProject project,String intentPackage){
           BMUtility.setAttributeValue(project.getManifestFile(),"manifest","package",intentPackage);
@@ -85,14 +100,14 @@ public class BharathMatrimonyAntTask {
     /**
      * This method will construct the project model which contains all the needed information about the project
      */
-    private BMProject constructBMProject(File manifestFile, String currentPackage, String intentPackage, String os, String fileSeparator){
+    private BMProject constructBMProject(String projectPath,File manifestFile, String currentPackage, String intentPackage, String os, String fileSeparator){
 
            String currentPackageInManifest = getCurrentPackagename(manifestFile);
            if(intentPackage.equals(currentPackageInManifest)){
               print(Severe.HIGH, "The pacakage name in the manifest is same as argument so automation will exit ");
               System.exit(0);
            }
-           return new BMProject(manifestFile,currentPackage,intentPackage,os,fileSeparator);
+           return new BMProject(projectPath,manifestFile,currentPackage,intentPackage,os,fileSeparator);
     }
 
 
@@ -122,6 +137,7 @@ public class BharathMatrimonyAntTask {
          return androidProject.getCurrentPackageName().concat(androidProject.getLanguageToBuild());
     }
       public static void main(String[] str){
+//          str = new String[]{"/home/npcompete/TempBiju/TestBMAutomation/bm_all_langs","com.bharatmatrimony","com.bharatmatrimony_tamil"};
           new BharathMatrimonyAntTask(str[0],str[1],str[2]);
       }
 

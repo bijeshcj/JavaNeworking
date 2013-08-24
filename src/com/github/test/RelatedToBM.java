@@ -17,15 +17,26 @@ public class RelatedToBM extends BMLogger{
     public RelatedToBM(){
 //        File file = new File("/home/npcompete/workspace/TestAntOne/src/com/example/testantone/MainActivity.java");
 //        renamePackage(file, "com.bharathmatrimony", "com.bharathmatrimony_tamil");
-        File homeFile = new File("/home/npcompete/TempBiju/TestBMAutomation/bm_all_langs/src/com/bharatmatrimony/chat/ChatDB.java");
-        renamePackage(homeFile,"com.bharatmatrimony","com.bharatmatrimony_tamil");
+//        File homeFile = new File("/home/npcompete/TempBiju/TestBMAutomation/bm_all_langs/src/com/bharatmatrimony/chat/ChatDB.java");
+//        renamePackage(homeFile,"com.bharatmatrimony","com.bharatmatrimony_tamil");
 //          replaceString("import com.bharatmatrimony.AppState;",);
+
+          print(Severe.LOW,"ret val "+getPackageNames("com.bharatmatrimony_tamil"));
     }
+
 
 
     public static void main(String[] str){
         new RelatedToBM();
     }
+
+    private String getPackageNames(String intent){
+        String retVal = "";
+        String[] vals = intent.split("\\.");
+        retVal = vals[vals.length-1];
+        return retVal;
+    }
+
     private void renamePackage(File file, String currentPackage, String intentPackage){
         try{
             String src = FileUtils.readFileToString(file);

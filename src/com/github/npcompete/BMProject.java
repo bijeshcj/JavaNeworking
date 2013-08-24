@@ -78,7 +78,8 @@ public class BMProject{
 
 
 
-    public BMProject(File manifestFile,String currentpackageName,String intentPackage,String os,String fileSeparator){
+    public BMProject(String projectPath,File manifestFile,String currentpackageName,String intentPackage,String os,String fileSeparator){
+        this.rootPath = projectPath;
         this.currentPackageName = currentpackageName;
         this.intentedPackageName = intentPackage;
         this.OS = os;

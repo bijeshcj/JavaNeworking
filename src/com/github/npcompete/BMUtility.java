@@ -14,6 +14,9 @@ import java.io.File;
 import java.io.IOException;
 import java.io.StringWriter;
 
+import static com.github.npcompete.BMLogger.print;
+import static com.github.npcompete.BMLogger.Severe;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Bijesh
@@ -21,21 +24,21 @@ import java.io.StringWriter;
  * Time: 1:51 PM
  * To change this template use File | Settings | File Templates.
  */
-public class BMUtility extends BMLogger{
+public class BMUtility {
 
     protected static void renamePackage(File file, String currentPackage, String intentPackage){
         try{
             String src = FileUtils.readFileToString(file);
             if(file.getName().equals("ChatDB.java")){
-                print(Severe.HIGH,"currentPackage: "+currentPackage+" intentPackage: "+intentPackage);
-                print(Severe.HIGH,"*********************** original src *****************");
-                print(Severe.HIGH,src);
+                print(Severe.LOW,"currentPackage: "+currentPackage+" intentPackage: "+intentPackage);
+                print(Severe.LOW,"*********************** original src *****************");
+                print(Severe.LOW,src);
             }
             src = src.replaceAll(currentPackage,intentPackage);
 
             if(file.getName().equals("ChatDB.java")){
-                print(Severe.HIGH,"*********************** parsed src *****************");
-                print(Severe.HIGH,src);
+                print(Severe.LOW,"*********************** parsed src *****************");
+                print(Severe.LOW,src);
             }
 
             FileUtils.write(file,src);
