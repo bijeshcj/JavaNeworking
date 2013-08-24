@@ -1,15 +1,15 @@
-package com.github.test;
+package com.github.npcompete;
 
 import java.io.File;
 
 /**
  * Created with IntelliJ IDEA.
- * User: npcompete
- * Date: 23/8/13
- * Time: 2:42 PM
+ * Author: Bijesh
+ * Date: 24/8/13
+ * Time: 12:31 PM
  * To change this template use File | Settings | File Templates.
  */
-public class AndroidProject{
+public class BMProject{
 
     private String OS;
     private String fileSeparator;
@@ -55,26 +55,26 @@ public class AndroidProject{
         return currentPackageName+"_"+languageToBuild;
     }
 
-    private String getCurrentPackageName() {
+    public String getCurrentPackageName() {
         return currentPackageName;
     }
 
-    private void setCurrentPackageName(String currentPackageName) {
+    public void setCurrentPackageName(String currentPackageName) {
         this.currentPackageName = currentPackageName;
     }
 
-    private String getLanguageToBuild() {
+    public String getLanguageToBuild() {
         return languageToBuild;
     }
 
-    private void setLanguageToBuild(String languageToBuild) {
+    public void setLanguageToBuild(String languageToBuild) {
         this.languageToBuild = languageToBuild;
     }
 
 
 
 
-    public AndroidProject(File manifestFile,String currentpackageName,String languageToBuild,String os,String fileSeparator){
+    public BMProject(File manifestFile,String currentpackageName,String languageToBuild,String os,String fileSeparator){
         this.currentPackageName = currentpackageName;
         this.languageToBuild = languageToBuild;
         this.OS = os;

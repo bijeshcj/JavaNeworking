@@ -2,7 +2,7 @@ package com.github.npcompete;
 
 /**
  * Created with IntelliJ IDEA.
- * User: npcompete
+ * User: Bijesh
  * Date: 23/8/13
  * Time: 2:07 PM
  * To change this template use File | Settings | File Templates.
@@ -23,7 +23,7 @@ public class BMLogger{
 
             }
     }
-    enum Severe{
+   static enum Severe{
          HIGH,
          LOW
     }

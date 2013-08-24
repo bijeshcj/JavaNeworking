@@ -5,6 +5,7 @@ import com.github.test.BMUtility;
 import org.w3c.dom.Document;
 
 import java.io.File;
+import java.util.Properties;
 
 /**
  * Created with IntelliJ IDEA.
@@ -16,19 +17,28 @@ import java.io.File;
 public class TestBM extends BMLogger{
 
     TestBM(){
-        File file = new File("/home/npcompete/workspace/TestAntOne/AndroidManifest.xml");
-        constructAndroidProject(file);
+        File file = new File("/home/npcompete/TempBiju/TestBMAutomation/bm_all_langs/AndroidManifest.xml");
+        AndroidProject project = constructAndroidProject(file,"tamil","linux",System.getProperty("file.separator"));
+
+        BMUtility.setAttributeValue(project.getManifestFile(),"manifest","package","com.bharatmatrimony_tamil");
+
+
+//          getProperties();
     }
 
     public static void main(String[] str){
         new TestBM();
     }
 
-    private AndroidProject constructAndroidProject(File manifestFile){
-        AndroidProject project = null;
-        String currentPackage = getCurrentPackagename(manifestFile);
+    private void getProperties(){
+        Properties  props = System.getProperties();
+        props.list(System.out);
+    }
 
-        return project;
+    private AndroidProject constructAndroidProject(File manifestFile,String language,String os,String fileSeparator){
+
+        String currentPackage = getCurrentPackagename(manifestFile);
+        return new AndroidProject(manifestFile,currentPackage,language,os,fileSeparator);
     }
     private String getCurrentPackagename(File manifestFile){
         String retVal = "";
@@ -42,3 +52,5 @@ public class TestBM extends BMLogger{
         return retVal;
     }
 }
+
+

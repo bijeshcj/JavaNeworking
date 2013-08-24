@@ -1,9 +1,6 @@
 package com.github.npcompete;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -18,12 +15,15 @@ import java.io.StringWriter;
 
 /**
  * Created with IntelliJ IDEA.
- * User: npcompete
+ * User: Bijesh
  * Date: 23/8/13
  * Time: 1:51 PM
  * To change this template use File | Settings | File Templates.
  */
 public class BMUtility extends BMLogger{
+
+
+
     protected static Document getDocument(File manifestFile){
         Document doc = null;
         try{
@@ -73,6 +73,16 @@ public class BMUtility extends BMLogger{
         }
         print(Severe.LOW,"in getAttributeValue return value "+retVal);
         return retVal;
+    }
+
+    protected  static void setAttributeValue(File manifestFile,String element,String attribute,String value){
+        Document doc = getDocument(manifestFile);
+        Node node = doc.getElementsByTagName(element).item(0);
+        NamedNodeMap attr = node.getAttributes();
+        Node nodeAttr = attr.getNamedItem(attribute);
+        nodeAttr.setTextContent(value);
+
+        saveDocument(doc,manifestFile);
     }
 
 }

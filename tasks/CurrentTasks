@@ -15,8 +15,8 @@ BM-ANTTASKS   -- in progress
          ** construct the AndroidProject -- done
 
 * rename the package name in the manifest file -- in progress
-         ** create a saveDocument method in BMUtility class -- done
-         ** rename the package name in the manifest -- not done
+         1) create a saveDocument method in BMUtility class -- done
+         2) rename the package name in the manifest -- in progress
 
 * scan the src folder and scan all the java file using the same logic of artisan to find the onPause, onresume and oDestroy methods   -- in progress
      -- create a regex to find the string import previous package name.R  -- not done
@@ -28,6 +28,9 @@ BM-ANTTASKS   -- in progress
 * rename the folder name as well (packagename) -- in progress
     method name:
        1) check related to BM (rename the package name)
+
+* get the root path from the user as of now -- not done
+        1) get the project home path from ant build property and use this method getManifestFile()
 
 * create an ant target which executes this jar -- not done
 
