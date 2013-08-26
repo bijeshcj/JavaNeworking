@@ -59,12 +59,16 @@ public class BharathMatrimonyAntTask {
     private void parseSourceAndResources(BMProject project){
         parsingSource(project);
         parsingResource(project);
+        parsingManifest(project);
     }
     private void parsingSource(BMProject project){
         traverse(new File(project.getRootPath()+project.getFileSeparator()+"src"),".java",project.getCurrentPackageName(),project.getIntentedPackageName());
     }
     private void parsingResource(BMProject project){
         traverse(new File(project.getRootPath()+project.getFileSeparator()+"res"),".xml",project.getCurrentPackageName(),project.getIntentedPackageName());
+    }
+    private void parsingManifest(BMProject project){
+         BMUtility.renamePackage(project.getManifestFile(),project.getCurrentPackageName(),project.getIntentedPackageName());
     }
 
     private void traverse(File f,String fileType,String currentName,String intentName){

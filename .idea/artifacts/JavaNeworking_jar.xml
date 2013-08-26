@@ -3,6 +3,7 @@
     <output-path>$PROJECT_DIR$/out/artifacts/JavaNeworking_jar</output-path>
     <root id="archive" name="JavaNeworking.jar">
       <element id="module-output" name="JavaNeworking" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/commons-io-2.2.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

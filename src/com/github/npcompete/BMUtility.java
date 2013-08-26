@@ -29,20 +29,8 @@ public class BMUtility {
     protected static void renamePackage(File file, String currentPackage, String intentPackage){
         try{
             String src = FileUtils.readFileToString(file);
-            if(file.getName().equals("ChatDB.java")){
-                print(Severe.LOW,"currentPackage: "+currentPackage+" intentPackage: "+intentPackage);
-                print(Severe.LOW,"*********************** original src *****************");
-                print(Severe.LOW,src);
-            }
             src = src.replaceAll(currentPackage,intentPackage);
-
-            if(file.getName().equals("ChatDB.java")){
-                print(Severe.LOW,"*********************** parsed src *****************");
-                print(Severe.LOW,src);
-            }
-
             FileUtils.write(file,src);
-
         }catch(IOException e){
             e.printStackTrace();
         }
