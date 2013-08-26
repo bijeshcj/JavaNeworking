@@ -36,15 +36,17 @@ BM-ANTTASKS   -- in progress
         1) see which method renames inside the file and include the manifest file as well.  -- completed
         2) already a method will rename inside the manifest element comment out that method -- completed
 
-**** create an ant script to build the bm project -- in progress
+* create an ant script to build the bm project -- completed
 
-* send an argument to ANT script which will build for that particular language which should also be the argument for bm jar-- not done
+* send an argument to ANT script which will build for that particular language which should also be the argument for bm jar-- completed
 
-* in the manifest if no args or if global then don't automate just build the apk -- not done
 
-* create an ant target which executes this jar -- not done
+* create target to automat bm and add as depends before the task which compiles the project -- completed
 
-* put this as depends before the task which compiles the project -- not done
+**** make sure only those languages resources are added while building the apk -- in progress
+
+
+* in the manifest if no args or if global then don't automate just build the apk -- not started
 
 *****************************************************************************************************************************************
 

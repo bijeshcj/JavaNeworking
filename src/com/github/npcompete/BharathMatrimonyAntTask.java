@@ -30,7 +30,7 @@ public class BharathMatrimonyAntTask {
           File manifestFile = getManifestFile(projectPath,fileSeparator);
           project = constructBMProject(projectPath,manifestFile, currentPackage, intentPackage, systemOS(), fileSeparator);
 
-          renamePackageNameInManifest(project,intentPackage);
+//          renamePackageNameInManifest(project,intentPackage);
           parseSourceAndResources(project);
           renameFolder(project);
 
