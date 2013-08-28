@@ -1,0 +1,9 @@
+encryprt mac address SRX-2   -- in progress
+============================================
+
+in class AutomationDemos method encryptMacAddress
+
+* print the numbers from 0 to 127 with their corresponding values -- done
+     -- method name print127
+* algorithm to interchange the values -- in progress
+     --  0 starts from 48 till 9 is 57
