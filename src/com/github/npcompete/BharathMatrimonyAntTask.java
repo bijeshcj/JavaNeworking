@@ -65,7 +65,36 @@ public class BharathMatrimonyAntTask {
         traverse(new File(project.getRootPath()+project.getFileSeparator()+"src"),".java",project.getCurrentPackageName(),project.getIntentedPackageName());
     }
     private void parsingResource(BMProject project){
-        traverse(new File(project.getRootPath()+project.getFileSeparator()+"res"),".xml",project.getCurrentPackageName(),project.getIntentedPackageName());
+        if(project.getIntentedPackageName().equals("com.bharatmatrimony")){
+          traverse(new File(project.getRootPath()+project.getFileSeparator()+"res"),".xml",project.getCurrentPackageName(),project.getIntentedPackageName());
+        }
+        else if(project.getIntentedPackageName().equals("com.bharatmatrimony_tamil")){
+            traverse(new File(project.getRootPath()+project.getFileSeparator()+"res_tamil"),".xml",project.getCurrentPackageName(),project.getIntentedPackageName());
+        }
+        else if(project.getIntentedPackageName().equals("com.bharatmatrimony_hindi")){
+            traverse(new File(project.getRootPath()+project.getFileSeparator()+"res_hindi"),".xml",project.getCurrentPackageName(),project.getIntentedPackageName());
+        }
+        else if(project.getIntentedPackageName().equals("com.bharatmatrimony_malayalam")){
+            traverse(new File(project.getRootPath()+project.getFileSeparator()+"res_malayalam"),".xml",project.getCurrentPackageName(),project.getIntentedPackageName());
+        }
+        else if(project.getIntentedPackageName().equals("com.bharatmatrimony_bengali")){
+            traverse(new File(project.getRootPath()+project.getFileSeparator()+"res_bengali"),".xml",project.getCurrentPackageName(),project.getIntentedPackageName());
+        }
+        else if(project.getIntentedPackageName().equals("com.bharatmatrimony_gujarati")){
+            traverse(new File(project.getRootPath()+project.getFileSeparator()+"res_gujarati"),".xml",project.getCurrentPackageName(),project.getIntentedPackageName());
+        }
+        else if(project.getIntentedPackageName().equals("com.bharatmatrimony_kannada")){
+            traverse(new File(project.getRootPath()+project.getFileSeparator()+"res_kannada"),".xml",project.getCurrentPackageName(),project.getIntentedPackageName());
+        }
+        else if(project.getIntentedPackageName().equals("com.bharatmatrimony_marati")){
+            traverse(new File(project.getRootPath()+project.getFileSeparator()+"res_marati"),".xml",project.getCurrentPackageName(),project.getIntentedPackageName());
+        }
+        else if(project.getIntentedPackageName().equals("com.bharatmatrimony_punjabi")){
+            traverse(new File(project.getRootPath()+project.getFileSeparator()+"res_punjabi"),".xml",project.getCurrentPackageName(),project.getIntentedPackageName());
+        }
+        else if(project.getIntentedPackageName().equals("com.bharatmatrimony_telugu")){
+            traverse(new File(project.getRootPath()+project.getFileSeparator()+"res_telugu"),".xml",project.getCurrentPackageName(),project.getIntentedPackageName());
+        }
     }
     private void parsingManifest(BMProject project){
          BMUtility.renamePackage(project.getManifestFile(),project.getCurrentPackageName(),project.getIntentedPackageName());

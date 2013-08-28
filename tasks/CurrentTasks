@@ -44,14 +44,15 @@ BM-ANTTASKS   -- in progress
 * create target to automat bm and add as depends before the task which compiles the project -- completed
 
 **** make sure only those languages resources are added while building the apk -- in progress
+         1) create an if-elseif structure with appropriate language and using appropriate res folder respectively  -- in progress
 
 
-* in the manifest if no args or if global then don't automate just build the apk -- not started
+
 
 *****************************************************************************************************************************************
 
 Related to BM  -- coded in class com.github.test.RelatedToBM
-==============
+============================================================
 
 * modify a java source file -- in progress
       1) check if any library available to modify the java source -- done
