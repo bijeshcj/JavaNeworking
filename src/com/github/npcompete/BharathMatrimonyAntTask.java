@@ -69,31 +69,31 @@ public class BharathMatrimonyAntTask {
           traverse(new File(project.getRootPath()+project.getFileSeparator()+"res"),".xml",project.getCurrentPackageName(),project.getIntentedPackageName());
         }
         else if(project.getIntentedPackageName().equals("com.bharatmatrimony_tamil")){
-            traverse(new File(project.getRootPath()+project.getFileSeparator()+"res_tamil"),".xml",project.getCurrentPackageName(),project.getIntentedPackageName());
+            traverse(new File(project.getRootPath()+project.getFileSeparator()+"res-tamil"),".xml",project.getCurrentPackageName(),project.getIntentedPackageName());
         }
         else if(project.getIntentedPackageName().equals("com.bharatmatrimony_hindi")){
-            traverse(new File(project.getRootPath()+project.getFileSeparator()+"res_hindi"),".xml",project.getCurrentPackageName(),project.getIntentedPackageName());
+            traverse(new File(project.getRootPath()+project.getFileSeparator()+"res-hindi"),".xml",project.getCurrentPackageName(),project.getIntentedPackageName());
         }
         else if(project.getIntentedPackageName().equals("com.bharatmatrimony_malayalam")){
-            traverse(new File(project.getRootPath()+project.getFileSeparator()+"res_malayalam"),".xml",project.getCurrentPackageName(),project.getIntentedPackageName());
+            traverse(new File(project.getRootPath()+project.getFileSeparator()+"res-malayalam"),".xml",project.getCurrentPackageName(),project.getIntentedPackageName());
         }
         else if(project.getIntentedPackageName().equals("com.bharatmatrimony_bengali")){
-            traverse(new File(project.getRootPath()+project.getFileSeparator()+"res_bengali"),".xml",project.getCurrentPackageName(),project.getIntentedPackageName());
+            traverse(new File(project.getRootPath()+project.getFileSeparator()+"res-bengali"),".xml",project.getCurrentPackageName(),project.getIntentedPackageName());
         }
         else if(project.getIntentedPackageName().equals("com.bharatmatrimony_gujarati")){
-            traverse(new File(project.getRootPath()+project.getFileSeparator()+"res_gujarati"),".xml",project.getCurrentPackageName(),project.getIntentedPackageName());
+            traverse(new File(project.getRootPath()+project.getFileSeparator()+"res-gujarati"),".xml",project.getCurrentPackageName(),project.getIntentedPackageName());
         }
         else if(project.getIntentedPackageName().equals("com.bharatmatrimony_kannada")){
-            traverse(new File(project.getRootPath()+project.getFileSeparator()+"res_kannada"),".xml",project.getCurrentPackageName(),project.getIntentedPackageName());
+            traverse(new File(project.getRootPath()+project.getFileSeparator()+"res-kannada"),".xml",project.getCurrentPackageName(),project.getIntentedPackageName());
         }
         else if(project.getIntentedPackageName().equals("com.bharatmatrimony_marati")){
-            traverse(new File(project.getRootPath()+project.getFileSeparator()+"res_marati"),".xml",project.getCurrentPackageName(),project.getIntentedPackageName());
+            traverse(new File(project.getRootPath()+project.getFileSeparator()+"res-marati"),".xml",project.getCurrentPackageName(),project.getIntentedPackageName());
         }
         else if(project.getIntentedPackageName().equals("com.bharatmatrimony_punjabi")){
-            traverse(new File(project.getRootPath()+project.getFileSeparator()+"res_punjabi"),".xml",project.getCurrentPackageName(),project.getIntentedPackageName());
+            traverse(new File(project.getRootPath()+project.getFileSeparator()+"res-punjabi"),".xml",project.getCurrentPackageName(),project.getIntentedPackageName());
         }
         else if(project.getIntentedPackageName().equals("com.bharatmatrimony_telugu")){
-            traverse(new File(project.getRootPath()+project.getFileSeparator()+"res_telugu"),".xml",project.getCurrentPackageName(),project.getIntentedPackageName());
+            traverse(new File(project.getRootPath()+project.getFileSeparator()+"res-telugu"),".xml",project.getCurrentPackageName(),project.getIntentedPackageName());
         }
     }
     private void parsingManifest(BMProject project){
