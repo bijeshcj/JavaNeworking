@@ -57,21 +57,28 @@ public class BharathMatrimonyAntTask {
 
 
     private void parseSourceAndResources(BMProject project){
+        print(Severe.LOW,"in parseSourceAndResources");
         parsingSource(project);
-        parsingResource(project);
+//        parsingResource(project);
         parsingManifest(project);
     }
     private void parsingSource(BMProject project){
         traverse(new File(project.getRootPath()+project.getFileSeparator()+"src"),".java",project.getCurrentPackageName(),project.getIntentedPackageName());
     }
     private void parsingResource(BMProject project){
+
+        print(Severe.LOW,"in parsingResource");
+
         if(project.getIntentedPackageName().equals("com.bharatmatrimony")){
+            print(Severe.LOW,"in all lang block");
           traverse(new File(project.getRootPath()+project.getFileSeparator()+"res"),".xml",project.getCurrentPackageName(),project.getIntentedPackageName());
         }
         else if(project.getIntentedPackageName().equals("com.bharatmatrimony_tamil")){
+            print(Severe.LOW,"in tamil block");
             traverse(new File(project.getRootPath()+project.getFileSeparator()+"res-tamil"),".xml",project.getCurrentPackageName(),project.getIntentedPackageName());
         }
         else if(project.getIntentedPackageName().equals("com.bharatmatrimony_hindi")){
+            print(Severe.LOW,"in hindi block");
             traverse(new File(project.getRootPath()+project.getFileSeparator()+"res-hindi"),".xml",project.getCurrentPackageName(),project.getIntentedPackageName());
         }
         else if(project.getIntentedPackageName().equals("com.bharatmatrimony_malayalam")){
@@ -101,6 +108,7 @@ public class BharathMatrimonyAntTask {
     }
 
     private void traverse(File f,String fileType,String currentName,String intentName){
+        print(Severe.LOW,"in traverse currentName "+currentName+" intent: "+intentName);
         File[] files = f.listFiles();
         for(File file:files){
             if(file.isDirectory()){
@@ -170,7 +178,7 @@ public class BharathMatrimonyAntTask {
          return androidProject.getCurrentPackageName().concat(androidProject.getLanguageToBuild());
     }
       public static void main(String[] str){
-//          str = new String[]{"/home/npcompete/TempBiju/TestBMAutomation/bm_all_langs","com.bharatmatrimony","com.bharatmatrimony_tamil"};
+//          str = new String[]{"/home/npcompete/TempBiju/TestBMAutomation/intelliJTest/bm_all_langs","com.bharatmatrimony_hindi","com.bharatmatrimony_tamil"};
           new BharathMatrimonyAntTask(str[0],str[1],str[2]);
       }
 
