@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 Manifest-Version: 1.0
 Main-Class: com.github.npcompete.BharathMatrimonyAntTask
 
+=======
+Manifest-Version: 1.0
+Main-Class: com.github.npcompete.BharathMatrimonyAntTask
+
+>>>>>>> f62da553b51ab08902461e3431cfe2ea6a9bbc87
