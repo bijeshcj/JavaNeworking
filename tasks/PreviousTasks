@@ -1,3 +1,74 @@
+BM-ANTTASKS   -- in progress
+=============================
+
+* create a method stub getManifestPath() to find the manifest file  -- done
+
+
+* Construct AndroidProject -- done
+     -- in manifest find the package attribute from the project element and then take the string and append the argument language
+         ** get the method from the artisan installer which scans and find the current package name -- done
+         ** create AndroidProject model which will have all the info about the AndroidProject -- done
+
+         ** construct the AndroidProject -- done
+
+* rename the package name in the manifest file -- done
+         1) create a saveDocument method in BMUtility class -- done
+         2) rename the package name in the manifest -- done
+
+* in the java src and res folder  change the package name used  -- done
+          1) check related to BM  (modify a java source file) -- done
+          2) use the renamePackage method and iterate inside the src and res folder and replace the string for all the files -- in progress
+                  Note: code in TestBM class method name : parseSourceAndResources
+                  1) loop inside the folder src -- in progress
+                  2) change call the method renamePackage by sending the file -- in progress
+                  3) loop inside the folder res and repeat step 2 -- not done
+
+
+
+* rename the folder name as well (packagename) -- done
+    method name:
+       1) check related to BM (rename the package folder name)
+
+* get the root path from the user as of now --  done
+        1) get the project home path from ant build property and use this method getManifestFile()
+
+* rename the package name in manifest file as well -- completed
+        1) see which method renames inside the file and include the manifest file as well.  -- completed
+        2) already a method will rename inside the manifest element comment out that method -- completed
+
+* create an ant script to build the bm project -- completed
+
+* send an argument to ANT script which will build for that particular language which should also be the argument for bm jar-- completed
+
+
+* create target to automat bm and add as depends before the task which compiles the project -- completed
+
+**** make sure only those languages resources are added while building the apk -- in progress
+         1) create an if-elseif structure with appropriate language and using appropriate res folder respectively  -- in progress
+
+
+
+
+*****************************************************************************************************************************************
+
+Related to BM  -- coded in class com.github.test.RelatedToBM
+============================================================
+
+* modify a java source file -- in progress
+      1) check if any library available to modify the java source -- done
+           -- coded in method renamePackage
+      2) save the changes in the same file -- done
+           -- coded in method renamePackage
+
+* rename the package folder name -- in progress
+       method name: renamePackgeFolder
+      1) from the root path of the project scan inside the src folder -- in progress
+      2) rename the folder name which has bharathmatrimony to bharathmatrimony_<language> -- not done
+
+
+*****************************************************************************************************************************************
+
+
 encryprt mac address SRX-2   -- in progress
 ============================================
 
