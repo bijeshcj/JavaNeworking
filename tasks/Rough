@@ -1,0 +1,12 @@
+pc = previouschar,cc = current char,po = previous operator,
+
+if i == 0
+  pc = get(i);
+
+  if(i != 0)
+    if(any operator)
+      po = get(i)
+      else{
+        if(p)
+        multiply(pc,get(i))
+         }

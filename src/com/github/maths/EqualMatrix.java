@@ -1,5 +1,7 @@
 package com.github.maths;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -23,34 +25,76 @@ public class EqualMatrix {
 
         // formula is also hard coded later on get the input from the user and make it dynamic
 
-        String formula = "(AB)C = A(BC)";
+        String formula = "(A+B)C = A(BC)";
 
         String lhs = getLHSOrRHS(formula,Side.LEFT);
 
         System.out.println("LHS : "+lhs);
-        getTextInsideBrackets(lhs);
+        List<String> lstChrs =  getTextInsideBrackets(lhs);
 
+        if(lstChrs != null){
+//            find the operators and do the operation
+            System.out.println("list is "+lstChrs);
+            performOperation(lstChrs);
+        }
 
     }
-    private void getTextInsideBrackets(String format){
+    private void performOperation(List<String> values){
+        for(int i = 0;i<values.size();i++)
+        {
+         char[] c = values.get(i).toCharArray();
+         char previousChar = ' ',currentChar=' ';
+         switch(c[0]){
+             case 'A':
+                 System.out.println("A found");
+                 break;
+             case 'B':
+                 System.out.println("B found");
+                 break;
+             case 'C':
+                 System.out.println("C found");
+                 break;
+             case 'D':
+                 System.out.println("D found");
+                 break;
+             case 'E':
+                 System.out.println("E found");
+                 break;
+             case '-':
+                 System.out.println("subtraction found");
+                 break;
+             case '+':
+                 System.out.println("Addition found");
+         }
+        }
+    }
+    private void temp(int i){
+        if(i == 0){
+
+        }
+
+    }
+    private List<String> getTextInsideBrackets(String format){
+
         Pattern pat = Pattern.compile("\\(.*?\\)");
         Matcher mat = pat.matcher(format);
         String temp = "";
         while(mat.find()){
             temp = mat.group();
             System.out.println(temp);
-            removePattern(temp);
+            return removeBrackets(temp);
         }
-
+       return null;
     }
-    private String removePattern(String candidate){
+    private List<String> removeBrackets(String candidate){
+        List<String> chars = new ArrayList<String>();
         String retVal = "";
-        Pattern pat = Pattern.compile("\\w");
+        Pattern pat = Pattern.compile("[^\\( || ^\\)]");
         Matcher mat = pat.matcher(candidate);
         while(mat.find()){
-            System.out.println(mat.group());
+            chars.add(mat.group());
         }
-        return retVal;
+        return chars;
     }
     private String getLHSOrRHS(String formula,Side side){
         // A validation needed to be included later on to fin whether the formuala is a valid
